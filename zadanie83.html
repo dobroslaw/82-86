@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Licznik dni i wiek</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		function liczDni() {
+			var dzisiaj = new Date();
+			var urodzenie = new Date(document.getElementById("data-urodzenia").value);
+			var roznica = dzisiaj.getTime() - urodzenie.getTime();
+			var dni = Math.floor(roznica / (1000 * 60 * 60 * 24));
+			document.getElementById("wynik-dni").innerHTML = "Przeżyłeś już " + dni + " dni!";
+		}
+
+		function sprawdzWiek() {
+			var dzisiaj = new Date();
+			var urodzenie = new Date(document.getElementById("data-urodzenia").value);
+			var roznica = dzisiaj.getFullYear() - urodzenie.getFullYear();
+			var miesiace = dzisiaj.getMonth() - urodzenie.getMonth();
+			if (miesiace < 0 || (miesiace === 0 && dzisiaj.getDate() < urodzenie.getDate())) {
+				roznica--;
+			}
+			if (roznica >= 18) {
+				document.getElementById("wynik-wiek").innerHTML = "Jesteś pełnoletni!";
+			} else if (roznica === 17 && miesiace === 0 && dzisiaj.getDate() === urodzenie.getDate()) {
+				document.getElementById("wynik-wiek").innerHTML = "Masz dzisiaj 18 lat! Sto lat!";
+			} else {
+				document.getElementById("wynik-wiek").innerHTML = "Nie jesteś jeszcze pełnoletni.";
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<h1>Licznik dni i wiek</h1>
+
+	<label for="data-urodzenia">Podaj datę urodzenia:</label>
+	<input type="date" id="data-urodzenia">
+
+	<button onclick="liczDni()">Licz dni od urodzenia</button>
+	<div id="wynik-dni"></div>
+
+	<button onclick="sprawdzWiek()">Sprawdź swój wiek</button>
+	<div id="wynik-wiek"></div>
+
+</body>
+</html>

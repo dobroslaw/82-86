@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Przyciski z grafikami</title>
+	<script type="text/javascript">
+		function ostatniaModyfikacja() {
+			document.getElementById("wynik").innerHTML = "Ostatnia modyfikacja: " + document.lastModified;
+		}
+		
+		function aktualnaData() {
+			var dzisiaj = new Date();
+			var dzien = dzisiaj.getDate();
+			var miesiac = dzisiaj.getMonth()+1;
+			var rok = dzisiaj.getFullYear();
+			document.getElementById("wynik").innerHTML = "Aktualna data: " + dzien + "." + miesiac + "." + rok;
+		}
+		
+		function aktualnaGodzina() {
+			var teraz = new Date();
+			var godzina = teraz.getHours();
+			var minuta = teraz.getMinutes();
+			var sekunda = teraz.getSeconds();
+			document.getElementById("wynik").innerHTML = "Aktualna godzina: " + godzina + ":" + minuta + ":" + sekunda;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<a href="#" onclick="ostatniaModyfikacja()"><img src="przycisk1.jpg" alt="Przycisk 1" border="0" onmouseover="this.src='przycisk1_hover.jpg'" onmouseout="this.src='przycisk1.jpg'" /></a>
+		<a href="#" onclick="aktualnaData()"><img src="przycisk2.jpg" alt="Przycisk 2" border="0" onmouseover="this.src='przycisk2_hover.jpg'" onmouseout="this.src='przycisk2.jpg'" /></a>
+		<a href="#" onclick="aktualnaGodzina()"><img src="przycisk3.jpg" alt="Przycisk 3" border="0" onmouseover="this.src='przycisk3_hover.jpg'" onmouseout="this.src='przycisk3.jpg'" /></a>
+	</form>
+	<div id="wynik"></div>
+</body>
+</html>

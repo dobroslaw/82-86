@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stoper</title>
+	<script type="text/javascript">
+		var timer_lan;
+		var start_lan;
+		var poczatek_lan = 0;
+		var stop_lan;
+		var koniec_lan;
+		var roznica_lan;
+
+		function landowski_start() {
+			start_lan = new Date();
+			poczatek_lan = start_lan.getTime();
+			timer_lan = setInterval(function() { 
+				document.getElementById("aktualny_czas").innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+		}
+
+		function landowski_stop() {
+			stop_lan = new Date();
+			koniec_lan = stop_lan.getTime();
+			roznica_lan = koniec_lan - poczatek_lan;
+			clearInterval(timer_lan);
+			document.getElementById("pokaz1").innerHTML = roznica_lan/1000 + " s";
+		}
+	</script>
+</head>
+<body>
+	<h1>Stoper</h1>
+	<p>Aktualny czas: <span id="aktualny_czas"></span></p>
+	<form>
+		<input type="button" name="Button1" value="START stoper" onclick="landowski_start()">
+		<input type="button" name="Button2" value="STOP stoper" onclick="landowski_stop()">
+	</form>
+	<table border="1">
+		<tr>
+			<td>Czas trwania:</td>
+			<td id="pokaz1"></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+</html>

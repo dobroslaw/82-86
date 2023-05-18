@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dzień tygodnia</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function dzienTygodnia() {
+			var dzis = new Date();
+			var dzien = dzis.getDay();
+			var dzienTyg;
+
+			switch (dzien) {
+				case 0:
+					dzienTyg = "niedziela";
+					break;
+				case 1:
+					dzienTyg = "poniedziałek";
+					break;
+				case 2:
+					dzienTyg = "wtorek";
+					break;
+				case 3:
+					dzienTyg = "środa";
+					break;
+				case 4:
+					dzienTyg = "czwartek";
+					break;
+				case 5:
+					dzienTyg = "piątek";
+					break;
+				case 6:
+					dzienTyg = "sobota";
+					break;
+				default:
+					dzienTyg = "nieznany dzień tygodnia";
+			}
+
+			document.getElementById("wynik").innerHTML = "Dziś jest " + dzienTyg + ".";
+		}
+	</script>
+</head>
+<body>
+	<button onclick="dzienTygodnia()">Sprawdź dzień tygodnia</button>
+	<p id="wynik"></p>
+</body>
+</html>

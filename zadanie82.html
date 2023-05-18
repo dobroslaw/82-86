@@ -1,0 +1,32 @@
+<html>
+<head>
+<title> Zadanie 82</title>
+<script language="JavaScript">
+ document.write("<font color=red size=20>Landowski</font>"+"<br>");
+ document.write("<font color=green size=5>dzis = new Date() - tworzy obiekt zawierający datę</font>"+"<br>");
+ document.write("<font color=green size=5>dzis = dzis.getHours() - zwraca aktualną godzinę</font>"+"<br>");
+  document.write("<font color=green size=5>dzis = dzis.getMinutes() - zwraca minuty</font>"+"<br>");
+  document.write("<font color=green size=5>dzis = dzis.getMonth()+1 - zwraca aktualny miesiąc</font>"+"<br>");
+   document.write("<font color=green size=5>dzis = dzis.getDate() - dzień miesiąca</font>"+"<br>");
+    document.write("<font color=green size=5>dzis = dzis.getFullYear() - pełna liczba reprezentująca rok</font>"+"<br>");
+</script>
+ <script language="JavaScript">
+ function pushbutton() {
+ alert("Czesc !");}
+ </script>
+</head>
+<body>
+Ostatnio zmodyfikowany
+<script language="LiveScript">
+ document.write(document.lastModified,"<br>")
+</script>
+<form>
+ <input type="button" name="Button1" value="Naciśnij mnie" onclick="pushbutton()">
+</form>
+<script language="JavaScript">
+ dzis = new Date()
+ document.write("<br>Aktualny czas : ",dzis.getHours(),":",dzis.getMinutes())
+ document.write("<br>Aktualna data : ",dzis.getMonth()+1,",",dzis.getDate(),",",dzis.getFullYear());
+</script>
+</body>
+</html>
